@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        <p class="title">알림창</p>
+        <button id="close">닫기</button>
+    </div>
+
+    <button onclick="아이디()">버튼1</button>
+    <button onclick="비밀번호()">버튼2</button>
+
+    <script>
+        document.getElementById('close').addEventListener('click',function(){
+            document.getElementById('alert').style.display='none' //콜백함수
+        });
+
+
+        function 아이디(){
+            document.getElementsByClassName('title')[0].innerHTML = '아이디를 입력';
+            document.getElementById('alert').style.display='block'
+        }
+        function 비밀번호(){
+            document.getElementById('alert').innerHTML = '비밀번호를 입력';
+            document.getElementById('alert').style.display='block'
+        }
+        
+        
+    </script>
+</html>

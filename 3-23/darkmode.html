@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="main.css" rel="stylesheet">
+  </head>
+  <body class="default">
+    <!-- 모달창 -->
+
+    <div class="black-bg">
+        <div class="white-bg">
+             <h4>로그인하세요</h4>
+                <form action="success.html">
+                <div class="my-3">
+                   <input type="text" class="form-control" id="id">
+                </div>
+                   <div class="my-3">
+                     <input type="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">전송</button>
+                    <button type="button" class="btn btn-danger" id="close">닫기</button>
+                </form>
+        
+        </div>
+    </div>
+    <!-- navbar -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand">JSShop</span>
+          <button class="badge btn-dark">Dark 🔄</button>
+          <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav> 
+      <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+      <!-- 메인화면 -->
+      <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+      </div>
+    </body>
+    
+    <script>
+         $('.navbar-toggler').on('click',function(){
+            $('.list-group').toggleClass('show');
+          })
+
+          $('#login').on('click',function(){
+            $('.black-bg').addClass('show-modal');
+            $('.white-bg').addClass('show-modal');
+          });
+          $('#close').on('click',function(){
+            $('.black-bg').removeClass('show-modal');
+            $('.white-bg').removeClass('show-modal');
+          });
+
+          $('form').on('submit',function(e){
+            if(document.getElementById('id').value==='' || document.getElementById('password').value===''){
+                if(document.getElementById('id').value==='' && document.getElementById('password').value===''){
+                    alert('아이디와 비밀번호를 입력하세요.');
+                }
+                else if(document.getElementById('id').value===''){
+                alert('아이디를 입력하세요.');
+                }
+                else if(document.getElementById('password').value===''){
+                alert('비밀번호를 입력하세요.');
+                }
+                e.preventDefault();
+            }
+            else if(document.getElementById('password').value.length<6){
+                alert('비밀번호를 6자리 이상 입력하세요.');
+                e.preventDefault();
+            }   
+        });
+
+        var count =0;
+        $('.badge').on('click',function(){
+            count+=1;
+            if(count%2!=0){
+                $('.badge').html('Light 🔄');
+                $('.default').toggleClass('default undefault');
+                $('.navbar-light').toggleClass('navbar-light navbar-dark');
+                $('.bg-light').toggleClass('bg-light bg-dark');
+            }
+            else{
+                $('.badge').html('Dark 🔄');
+                // $('.undefault').removeClass('undefault').addClass('default');
+                $('.undefault').toggleClass('undefault default');
+                $('.navbar-dark').toggleClass('navbar-dark navbar-light');
+                $('.bg-dark').toggleClass('bg-dark bg-light');  
+            }
+        });         
+    </script>
+</html>
