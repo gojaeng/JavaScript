@@ -11,8 +11,3 @@ function tap_open(i){
     $('.tab-content').removeClass('show');
     $('.tab-content').eq(i).addClass('show');
 }
-    
-    
-
-    
-
