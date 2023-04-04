@@ -4,6 +4,9 @@
 // });
 // }
 
+$('.list').click(function(e){
+    tap_open(e.target.dataset.id);
+})
 
 function tap_open(i){
     $('.tab-button').removeClass('orange');
@@ -12,7 +15,7 @@ function tap_open(i){
     $('.tab-content').eq(i).addClass('show');
 }
     
-    
-
-    
+var car = {name: "소나타", price: [50000,3000,4000]};
+$('.car_name').html(car.name); 
+$('.car_price').html(car.price[0]);
 
