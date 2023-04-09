@@ -1,0 +1,21 @@
+.card_background{
+    height: 3000px;
+    margin-top: 800px;
+    margin-bottom: 1600px;
+}
+.card_box img{
+    display: block;
+    margin: auto;
+    max-width: 80%;
+}
+.card_box{
+    position: sticky;
+    top: 400px;
+    margin-top: 200px;
+    transition: all 0.2s;
+}
+h1{
+    position: sticky;
+    top: 200px;
+    text-align: center;
+}
