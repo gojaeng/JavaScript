@@ -36,6 +36,8 @@ $('.buy').click(function(e){
   }
 });
 
+
+
 // var count = 0;
 // $("#more").click(function () {
 //   $("#select").addClass("show");

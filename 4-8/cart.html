@@ -5,10 +5,23 @@
 </head>
 <body>
   <div class="cart_page">장바구니 페이지</div>
+  <div id="cart_list" >
+    <h5></h5>
 
+  </div>
 
 </body>
-<script src="list.js">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+var cartList = document.getElementById('cart_list');
+var cartItems = JSON.parse(localStorage.getItem('cart'));
+if (cartItems !== null) {
+$.each(cartItems, function(index, item) {
+  var li = $('<h5>').text(item);
+  cartList.append(li[0]);
+  });
+};
 
 </script> 
 </html>
