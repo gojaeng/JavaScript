@@ -110,11 +110,13 @@
         const countdown = setInterval(timer,1000);
         var count=5;
         function timer(){
-           if(count>0){
+           if(count>0)
+           {
                 $('#time').html(count);
                 count--;
            }
-           else{
+           else
+           {
             clearInterval(countdown);
             $('.alert').hide();
            }
